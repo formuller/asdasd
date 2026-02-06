@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finova Mali Müşavirlik</title>
+  <meta name="description" content="Mali müşavirlik ofisleri için modern ve responsive HTML template" />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --primary: #0c4a6e;
+      --primary-soft: #e0f2fe;
+      --accent: #0ea5e9;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe4f0;
+      --radius: 16px;
+      --shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 8px 20px rgba(12, 74, 110, 0.25);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid #bae6fd;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 2.8vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 1rem;
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 { margin: 0 0 .8rem; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .8rem;
+      text-align: center;
+    }
+
+    .stat strong { display: block; font-size: 1.2rem; color: var(--primary); }
+
+    section { padding: 2.5rem 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .contact {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .contact p { margin: .2rem 0; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 2rem 0 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      .stats { grid-template-columns: 1fr; }
+      .hero { padding-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Finova Mali Müşavirlik</a>
+      <nav>
+        <ul>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#nedenbiz">Neden Biz?</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+      <a href="#iletisim" class="btn">Randevu Al</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">✓ E-Defter, E-Fatura, Beyanname</span>
+          <h1>Mali süreçlerinizi güvenle yöneten modern muhasebe çözümü.</h1>
+          <p class="subtitle">
+            Şirket kuruluşundan dönem sonu kapanışına kadar tüm mali müşavirlik ihtiyaçlarınızda
+            mevzuata uygun, hızlı ve şeffaf danışmanlık hizmeti sunuyoruz.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#iletisim">Ücretsiz Ön Görüşme</a>
+            <a class="btn btn-outline" href="#hizmetler">Hizmetleri İncele</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Hızlı Bilgi</h3>
+          <p>Yeni şirket kuracak girişimciler için ilk danışmanlık ücretsizdir.</p>
+          <div class="stats">
+            <div class="stat"><strong>12+</strong>Yıl Tecrübe</div>
+            <div class="stat"><strong>350+</strong>Aktif Müşteri</div>
+            <div class="stat"><strong>%98</strong>Müşteri Memnuniyeti</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="hizmetler" class="container">
+      <div class="section-title">
+        <h2>Hizmet Alanlarımız</h2>
+        <p>KOBİ, serbest meslek ve e-ticaret firmalarına özel mali müşavirlik hizmetleri.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Genel Muhasebe</h3>
+          <p>Yasal defterlerin tutulması, dönemsel raporlamalar ve finansal analiz desteği.</p>
+        </article>
+        <article class="card">
+          <h3>Beyanname & SGK</h3>
+          <p>KDV, Muhtasar, Geçici Vergi, SGK bildirgeleri ve teşvik takip süreçleri.</p>
+        </article>
+        <article class="card">
+          <h3>Danışmanlık</h3>
+          <p>Vergi planlaması, şirket kuruluşu, mali tablo yorumlama ve büyüme danışmanlığı.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="nedenbiz" class="container">
+      <div class="section-title">
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Güncel Mevzuat Takibi</h3>
+          <p>Yasal değişiklikleri anlık takip eder, sizi olası cezalardan koruruz.</p>
+        </article>
+        <article class="card">
+          <h3>Dijital İşleyiş</h3>
+          <p>Bulut tabanlı belge yönetimi ile süreçleri uzaktan ve pratik şekilde yönetiriz.</p>
+        </article>
+        <article class="card">
+          <h3>Şeffaf İletişim</h3>
+          <p>Her ay düzenli finansal özet paylaşır, karar süreçlerinizi destekleriz.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="iletisim" class="container">
+      <div class="contact">
+        <div>
+          <h2>Hemen İletişime Geçin</h2>
+          <p>İşletmenize özel mali yol haritası için bize ulaşın.</p>
+          <p><strong>Telefon:</strong> +90 212 000 00 00</p>
+          <p><strong>E-posta:</strong> info@finovamali.com</p>
+        </div>
+        <div>
+          <a href="mailto:info@finovamali.com" class="btn">E-posta Gönder</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Finova Mali Müşavirlik · Tüm hakları saklıdır.
+  </footer>
+</body>
+</html>
