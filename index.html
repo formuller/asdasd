@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muhasebeci ve mali müşavirlik hizmetleri için güvenilir, profesyonel ve kurumsal web sitesi şablonu.">
+  <meta name="keywords" content="muhasebe, mali müşavir, vergi danışmanlığı, şirket kuruluşu, finansal danışmanlık">
+  <meta name="author" content="Demir Mali Müşavirlik">
+  <title>Demir Mali Müşavirlik | Güvenilir Mali Danışmanlık</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #123a5a;
+      --primary-dark: #0d2a41;
+      --secondary: #1f6f63;
+      --text: #1f2a37;
+      --muted: #5a6776;
+      --bg: #f6f8fb;
+      --white: #ffffff;
+      --border: #dde3ea;
+      --shadow: 0 12px 30px rgba(16, 32, 58, 0.08);
+      --radius: 14px;
+      --container: min(1120px, 92vw);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 5.5rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      margin-bottom: 0.9rem;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 2rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      gap: 1.25rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .brand h1 {
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .brand p {
+      font-size: 0.87rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--primary-dark);
+      background: #edf3f8;
+      outline: none;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(140deg, #f7fafc 0%, #eef4f9 55%, #e8f1ef 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 5.5rem 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.15;
+      color: var(--primary-dark);
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 56ch;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      border: 1px solid transparent;
+      padding: 0.8rem 1.3rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .hero-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem;
+    }
+
+    .hero-panel h3 {
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      font-size: 1.08rem;
+    }
+
+    .hero-panel ul {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .hero-panel li {
+      background: #f5f9fc;
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+      border: 1px solid #e6edf3;
+      font-size: 0.95rem;
+    }
+
+    .hero-panel strong {
+      color: var(--primary-dark);
+      display: block;
+      font-size: 0.88rem;
+    }
+
+    /* Services */
+    .services {
+      background: var(--bg);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(15, 37, 65, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(150deg, #123a5a, #2c7a6f);
+      position: relative;
+      margin-bottom: 0.85rem;
+    }
+
+    .icon::before,
+    .icon::after {
+      content: "";
+      position: absolute;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 2px;
+    }
+
+    .icon::before {
+      width: 20px;
+      height: 3px;
+      top: 14px;
+      left: 13px;
+    }
+
+    .icon::after {
+      width: 14px;
+      height: 3px;
+      top: 24px;
+      left: 13px;
+    }
+
+    .card h3 {
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* About */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .about-panel {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+    }
+
+    .experience {
+      background: linear-gradient(160deg, #123a5a, #184d77);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.7rem;
+      display: grid;
+      align-content: center;
+      min-height: 220px;
+    }
+
+    .experience .years {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.45rem;
+    }
+
+    .experience p {
+      font-weight: 500;
+      opacity: 0.93;
+    }
+
+    /* Blog */
+    .blog {
+      background: var(--bg);
+    }
+
+    .blog-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .blog .card {
+      padding: 1.1rem;
+    }
+
+    .meta {
+      display: flex;
+      gap: 0.55rem;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #e9f2f0;
+      color: #1f6f63;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .blog h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list li {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem;
+      background: #f9fbfd;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #cfd9e3;
+      border-radius: 8px;
+      padding: 0.7rem 0.75rem;
+      font: inherit;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      outline: 2px solid rgba(18, 58, 90, 0.14);
+      outline-offset: 1px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 2rem;
+      background: #0f2235;
+      color: #cfd9e2;
+      padding: 1.8rem 0;
+    }
+
+    .footer-wrap {
+      display: grid;
+      gap: 0.8rem;
+      text-align: center;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      font-size: 0.84rem;
+      transition: background 0.2s ease;
+    }
+
+    .socials a:hover,
+    .socials a:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-wrap,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      nav ul {
+        justify-content: flex-start;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.85rem 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 4.2rem 0;
+      }
+
+      .services-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <h1>Demir Mali Müşavirlik</h1>
+        <p>Güvenilir Mali Danışmanlık</p>
+      </div>
+      <nav aria-label="Ana menü">
+        <ul>
+          <li><a href="#anasayfa">Anasayfa</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="anasayfa">
+    <section class="hero" aria-labelledby="hero-baslik">
+      <div class="container hero-grid">
+        <div>
+          <h2 id="hero-baslik">Finansal süreçlerinizde güvenilir, şeffaf ve uzman çözüm ortağınız.</h2>
+          <p>İşletmenizin muhasebe, vergi ve mevzuat süreçlerini güncel düzenlemelere uygun şekilde yönetiyor; stratejik kararlarınız için sağlam mali içgörüler sunuyoruz.</p>
+          <a class="btn" href="#iletisim">Danışmanlık Al</a>
+        </div>
+        <aside class="hero-panel" aria-label="Öne çıkan hizmet avantajları">
+          <h3>Neden Demir Mali Müşavirlik?</h3>
+          <ul>
+            <li><strong>Düzenli Raporlama</strong>Aylık finansal görünüm ve nakit akışı analizi.</li>
+            <li><strong>Mevzuat Takibi</strong>Güncel yasal değişikliklere tam uyum yaklaşımı.</li>
+            <li><strong>Hızlı İletişim</strong>KOBİ ve şirketlere zamanında geri bildirim desteği.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section services" id="hizmetler" aria-labelledby="hizmetler-baslik">
+      <div class="container">
+        <h2 class="section-title" id="hizmetler-baslik">Hizmetlerimiz</h2>
+        <p class="section-lead">İşletmenizin finansal yönetim ihtiyaçlarına göre yapılandırılmış, sürdürülebilir ve sonuç odaklı profesyonel mali çözümler sunuyoruz.</p>
+        <div class="grid services-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true"></div>
+            <h3>Muhasebe Hizmetleri</h3>
+            <p>Defter tutma, beyanname hazırlama ve dönem sonu kapanış işlemlerinde eksiksiz ve düzenli hizmet.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"></div>
+            <h3>Vergi Danışmanlığı</h3>
+            <p>Vergi planlaması, risk analizi ve yasal avantajların doğru şekilde değerlendirilmesi için uzman danışmanlık.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"></div>
+            <h3>Mali Müşavirlik</h3>
+            <p>Şirketinizin finansal performansını güçlendirecek stratejik raporlama ve karar destek süreçleri.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"></div>
+            <h3>Şirket Kuruluşu</h3>
+            <p>Şirket türü seçimi, resmi başvurular ve kuruluş sonrası mali süreçlerin doğru şekilde planlanması.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hakkimizda" aria-labelledby="hakkimizda-baslik">
+      <div class="container about-wrap">
+        <div class="about-panel">
+          <h2 class="section-title" id="hakkimizda-baslik">Hakkımızda</h2>
+          <p>Demir Mali Müşavirlik, farklı sektörlerden işletmelere muhasebe ve finans danışmanlığı sunan bağımsız bir mali müşavirlik ofisidir. Kurulduğumuz günden bu yana etik ilkelere bağlı, şeffaf ve uzun vadeli iş ortaklığı yaklaşımıyla çalışıyoruz.</p>
+          <p>Uzman ekibimiz, mevzuat değişikliklerini yakından takip ederek müşterilerimizin mali süreçlerini güvenle yönetmelerine yardımcı olur. Önceliğimiz, işletmelerin yasal uyumunu korurken verimliliğini artırmaktır.</p>
+        </div>
+        <div class="experience" aria-label="Deneyim bilgisi">
+          <div class="years">15+ Yıl</div>
+          <p>Kurumsal muhasebe, vergi danışmanlığı ve mali müşavirlik deneyimi ile yüzlerce işletmeye güvenilir destek.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog" id="blog" aria-labelledby="blog-baslik">
+      <div class="container">
+        <h2 class="section-title" id="blog-baslik">Güncel Yazılar</h2>
+        <p class="section-lead">İş dünyasını etkileyen vergi düzenlemeleri, muhasebe uygulamaları ve güncel mevzuat değişiklikleri hakkında kısa değerlendirmeler.</p>
+        <div class="grid blog-grid">
+          <article class="card">
+            <div class="meta">
+              <time datetime="2026-01-18">18 Ocak 2026</time>
+              <span class="tag">Vergi</span>
+            </div>
+            <h3>2026 Yılı Vergi Takviminde Dikkat Edilmesi Gereken Tarihler</h3>
+            <p>Yeni dönemde beyan ve ödeme süreçlerinin aksamaması için kritik tarihleri ve planlama önerilerini özetledik.</p>
+          </article>
+          <article class="card">
+            <div class="meta">
+              <time datetime="2026-01-05">05 Ocak 2026</time>
+              <span class="tag">Muhasebe</span>
+            </div>
+            <h3>KOBİ’ler İçin Düzenli Finansal Raporlamanın 5 Temel Faydası</h3>
+            <p>Karar alma hızını artıran raporlama sistemleri ile işletme kârlılığına doğrudan katkı sağlayan yöntemler.</p>
+          </article>
+          <article class="card">
+            <div class="meta">
+              <time datetime="2025-12-22">22 Aralık 2025</time>
+              <span class="tag">Mevzuat</span>
+            </div>
+            <h3>E-Fatura ve E-Defter Uyum Sürecinde Sık Yapılan Hatalar</h3>
+            <p>Mevzuata uyum sürecinde karşılaşılan operasyonel hataları ve uygulanabilir iyileştirme önerilerini ele aldık.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="iletisim" aria-labelledby="iletisim-baslik">
+      <div class="container contact-wrap">
+        <div>
+          <h2 class="section-title" id="iletisim-baslik">İletişim</h2>
+          <p class="section-lead">Sorularınız, hizmet talepleriniz veya ön görüşme randevusu için bizimle iletişime geçebilirsiniz.</p>
+          <ul class="contact-list">
+            <li><strong>Telefon:</strong> +90 (212) 555 12 34</li>
+            <li><strong>E-posta:</strong> info@demirmali.com</li>
+            <li><strong>Adres:</strong> Esentepe Mah. Büyükdere Cad. No:120, Şişli / İstanbul</li>
+          </ul>
+        </div>
+        <form action="#" method="post" aria-label="İletişim formu">
+          <div>
+            <label for="ad">Ad Soyad</label>
+            <input id="ad" name="ad" type="text" placeholder="Adınızı ve soyadınızı giriniz" required>
+          </div>
+          <div>
+            <label for="eposta">E-posta</label>
+            <input id="eposta" name="eposta" type="email" placeholder="ornek@firma.com" required>
+          </div>
+          <div>
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" placeholder="05xx xxx xx xx">
+          </div>
+          <div>
+            <label for="mesaj">Mesajınız</label>
+            <textarea id="mesaj" name="mesaj" placeholder="İhtiyacınızı kısaca yazabilirsiniz..."></textarea>
+          </div>
+          <button class="btn" type="submit">Mesaj Gönder</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>&copy; 2026 Demir Mali Müşavirlik. Tüm hakları saklıdır.</p>
+      <p>Bu sitede yer alan içerikler yalnızca genel bilgilendirme amaçlıdır; profesyonel mali ve hukuki danışmanlık yerine geçmez.</p>
+      <ul class="socials" aria-label="Sosyal medya bağlantıları">
+        <li><a href="#" aria-label="LinkedIn">in</a></li>
+        <li><a href="#" aria-label="X">x</a></li>
+        <li><a href="#" aria-label="Instagram">ig</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
